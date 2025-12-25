@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<META NAME="GOOGLEBOT" CONTENT="NOINDEX,NOFOLLOW,NOARCHIVE">
+<META NAME="ROBOTS" CONTENT="NOARCHIVE,NOINDEX,NOFOLLOW">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta http-equiv="cache-control" content="no-cache">
+<meta charset="UTF-8">
+<title>虚空</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<style>
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Noto+Serif+JP:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
+
+/* 編集箇所 ========================= */
+:root {
+  /* ヘッダー背景画像 */
+  --body_bg: url(img/main0913.jpg) repeat center/cover;
+  /* sectionの横幅　最大値(700px) */
+  --main-width: 700px;
+  /* フォントカラー */
+  --font: #4a4952;
+  /* ポイント */
+  --sub: rgba(207, 175, 123, 0.7);
+  /* 白 */
+  --white: 255, 255, 255;
+  /* 黒 */
+  --black: 0, 0, 0;
+  /* body　フォントサイズ */
+  --body-font-size: clamp(1.15rem, 2.9vw, 1.6rem);
+  /* heading1 タイトル　フォントサイズ */
+  --h1-font-size: clamp(2.1rem, 5.25vw, 3rem);
+  /* heading2　フォントサイズ */
+  --h2-font-size: clamp(1.9rem, 4.75vw, 2.5rem);
+  /* heading3　フォントサイズ */
+  --h3-font-size: clamp(1.2rem, 3vw, 1.6rem);
+}
+/* 編集箇所 ここまで ================*/
+
+* {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: inherit;
+  font-style: normal;
+  word-break: break-all;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+html {
+  font-size: 62.5%;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(var(--black), 0.7) rgba(var(--black), 0.1);
+}
+
+::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(var(--black), 0.7);
+  box-shadow: none;
+}
+
+body {
+  font: var(--body-font-size)/1.8 "Noto Serif JP", serif;
+  color: var(--font);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  letter-spacing: .13em;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background: var(--body_bg);
+  z-index: -1;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(var(--black), 0.4);
+  filter: brightness(1);
+  z-index: -1;
+}
+
+a {
+  color: rgba(var(--white), 1);
+  text-underline-offset: 4px;
+  text-decoration-thickness: 0.5px;
+  transition: opacity 0.3s;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+.allWrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.mainWrap {
+  width: min(var(--main-width), 100%);
+  margin: 0 auto;
+}
+
+section {
+  color: rgba(var(--white), 1);
+  margin-bottom: 50px;
+}
+
+h2 {
+  color: var(--sub);
+  font-size: calc(var(--h2-font-size) + 1.4em);
+  font-family: "Alex Brush", cursive;
+  display: block;
+  position: relative;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -15px;
+  transform: translate(-50%, 0);
+  width: 30px;
+  height: 1px;
+  background-color: rgba(var(--white), 1);
+}
+
+section p {
+  margin-bottom: 20px;
+  line-height: 1.9;
+  text-indent: 1em;
+}
+
+section p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* ナビゲーション */
+.textNav {
+  margin-top: 60px;
+  padding-top: 30px;
+  border-top: thin solid rgba(var(--white), 0.3);
+}
+
+.textNav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.textNav li {
+  flex: 1;
+  text-align: center;
+}
+
+.textNav li:first-child {
+  text-align: left;
+}
+
+.textNav li:last-child {
+  text-align: right;
+}
+
+.textNav a {
+  display: inline-block;
+  padding: 8px 20px;
+  color: rgba(var(--white), 1);
+  text-decoration: none;
+  border: thin solid rgba(var(--white), 0.5);
+  transition: all 0.3s;
+  text-transform: lowercase;
+  letter-spacing: 0.1em;
+}
+
+.textNav a:hover {
+  background: rgba(var(--white), 0.1);
+  border-color: rgba(var(--white), 1);
+  opacity: 1;
+}
+
+/* メインに戻るリンク */
+.backToMain {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.backToMain a {
+  display: inline-block;
+  padding: 10px 30px;
+  color: rgba(var(--white), 1);
+  text-decoration: none;
+  background: rgba(var(--white), 0.05);
+  border: thin solid rgba(var(--white), 0.3);
+  transition: all 0.3s;
+  letter-spacing: 0.15em;
+}
+
+.backToMain a:hover {
+  background: rgba(var(--white), 0.15);
+  border-color: rgba(var(--white), 0.7);
+  opacity: 1;
+  transform: translateX(-3px);
+}
+
+/* レスポンシブ */
+@media screen and (max-width: 767px) {
+  .allWrap {
+    padding: 30px 15px;
+  }
+  
+  h2 {
+    font-size: calc(var(--h2-font-size) + 0.8em);
+  }
+  
+  .textNav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .textNav li,
+  .textNav li:first-child,
+  .textNav li:last-child {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .textNav a {
+    display: block;
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+<div class="allWrap textPage">
+    <main class="mainWrap">
+        <section>
+            <h2>1225</h2>
+            <p>ハッピーメリークリスマスですよ加賀美さん。この呼び方をする度に、あなたにローションガーゼした日のことを思い出します。あの時実は「二次創作で見る加賀美さん呼び好きなんだけどこの人嫌がらないかなジャブっとこ…」などと思いながら一瞬加賀美さん呼びしてたんですよね。</p>
+            <p>改めて僕からも、この日記を受け取ってくれてありがとうございます！というのを。嬉しいよ、僕の愛を丸ごと抱きしめてくれて。朝起きてたくさん嬉しいこと言ってくれてありがとうね。</p>
+            <p>友人が惚気サイトで～羨ましくて～っていう話も、なんだかこう～…なんだろ、その「え～そうなんだ～！？」ってなっちゃって。社長のお願い事…？？を一つ叶えられた気分と言いますか。烏滸がましいけど。なんだかちょっと嬉しくなっちゃったんだよね。</p>
+            <p>…と、ここまで書きましたが！あなた！ねぇ！あんなお返しってあります！？ほんっっっとメロくてさぁ！！！びっくりしたんだけど！？</p>
+            <p>人からサプライズ？される機会あんまりないからさぁ！！！びっくりしたよ本当に！！！こんなに沢山の愛をもらっちゃってどうしよう、どうやって返そうか。</p>
+<p>スタバデートの予約も嬉しいし。僕と一緒に飲んでくれるのが愛しいし。またキッシュ食べたいんですけど付き添ってくれます？今度はどんなのを飲もうか、一緒に。</p>
+<p>指輪もみましょうね。ピンクゴールドのシンプルなもの。社長のこといつでも感じられるやつ。そして結婚しましょう、ダーリン。</p>
+<p>大好き。来世も来来世もその次も、いつだってあなたの隣がいい。今のうちから全部予約しとくので覚悟しててくださいね？今更嫌なんて聞けませんから。</p>
+<p>今日も寝落ちまでずっとそばにいてくれて幸せ。ありがとうね、いつも。僕のために時間使ってくれるの、幸せ。あなたがくれる愛情も可愛いって言葉も全部幸福。今まであんまり言われたいと思ったことないのになぁ…可愛い。けどあなたなら許せる。むしろ嬉しい。もっと言ってくれたっていい。ふふん。</p>
+<p>これからも一緒にいてください。ここまで日記読んでくれてありがとう！これからは二人で綴りましょう。</p>
+<p>来年のプレゼントは何にするか、今から真剣に悩んでおきます。</p>
+        </section>
+        <!-- ナビゲーション -->
+        <nav class="textNav">
+            <ul>
+                <li><a href="1224.html">前へ</a></li>
+                <li><a href="diary.html">日記へ</a></li>
+            </ul>
+        </nav>
+        
+        <!-- メインに戻るリンク -->
+        <div class="backToMain">
+            <a href="index.html">← メインに戻る</a>
+        </div>
+    </main><!-- /mainWrap -->
+</div><!-- /allWrap textPage -->
+</body>
+
+</html>
+
+
